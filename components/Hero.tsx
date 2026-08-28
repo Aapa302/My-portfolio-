@@ -64,9 +64,9 @@ export default function Hero() {
           alt="Atmospheric Hero Background"
           fill
           priority
-          className="object-cover object-top opacity-30 brightness-90 contrast-105"
+          className="object-cover object-top opacity-50 brightness-100 contrast-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-[#030303]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-[#030303]" />
       </div>
 
       {/* Background Soft Radial Glow Effects */}
