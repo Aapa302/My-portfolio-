@@ -11,7 +11,11 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  onAboutClick?: () => void;
+}
+
+export default function Navbar({ onAboutClick }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -39,6 +43,12 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => {
+                  if (item.name === "About" && onAboutClick) {
+                    e.preventDefault();
+                    onAboutClick();
+                  }
+                }}
                 className="text-sm font-medium text-neutral-300 hover:text-white transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-indigo-500 after:to-purple-500 hover:after:w-full after:transition-all after:duration-300"
               >
                 {item.name}
@@ -80,7 +90,13 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                    if (item.name === "About" && onAboutClick) {
+                      e.preventDefault();
+                      onAboutClick();
+                    }
+                  }}
                   className="block px-3 py-2 rounded-md text-base font-medium text-neutral-300 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   {item.name}
