@@ -33,7 +33,7 @@ const techPills = [
 ];
 
 export default function Hero() {
-  const [showCard, setShowCard] = useState(true);
+  const [showCard, setShowCard] = useState(false);
 
   // Motion values for tilt effect
   const mouseX = useMotionValue(0);
@@ -161,13 +161,14 @@ export default function Hero() {
               {showCard && (
                 <motion.div
                   key="id-card"
-                  initial={{ opacity: 0, scale: 0.8, rotate: -8, y: 30 }}
+                  initial={{ opacity: 0, scale: 0.8, rotate: -8, y: -30 }}
                   animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
                   exit={{ opacity: 0, scale: 0.8, rotate: 8, y: -30 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                   style={{
+                    originY: 0,
                     rotateX,
                     rotateY,
                     transformStyle: "preserve-3d",
