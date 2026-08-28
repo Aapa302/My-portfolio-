@@ -6,7 +6,7 @@ import {
   Layers,
   Award,
   Code2,
-  ArrowUpRight,
+  ExternalLink,
   PlusCircle,
   Sparkles,
   Bot,
@@ -48,6 +48,8 @@ const projectsData = [
     tags: ["React", "Node.js", "Firebase", "Gemini API"],
     gradient: "from-indigo-600 via-purple-600 to-pink-600",
     icon: Bot,
+    liveUrl: "https://apex-os-frontend.onrender.com/",
+    githubUrl: "https://github.com/Aapa302/apex-os-frontend",
   },
   {
     id: "reelforge",
@@ -57,6 +59,8 @@ const projectsData = [
     tags: ["React", "Node.js", "Video Processing"],
     gradient: "from-blue-600 via-indigo-600 to-cyan-500",
     icon: Video,
+    liveUrl: "https://reelforge-frontend-3wf0.onrender.com/",
+    githubUrl: "https://github.com/Aapa302/reelforge-frontend",
   },
   {
     id: "voicekhata",
@@ -66,6 +70,19 @@ const projectsData = [
     tags: ["React", "Firebase", "Speech Recognition"],
     gradient: "from-emerald-600 via-teal-600 to-amber-500",
     icon: Mic,
+    liveUrl: "https://voices-udhar-frontend.onrender.com/",
+    githubUrl: "https://github.com/Aapa302/Voice-khata",
+  },
+  {
+    id: "hypereel",
+    title: "HypeReel",
+    description:
+      "An AI-powered tool that watches uploaded videos and generates both descriptive and catchy viral-style captions, along with trending hashtags across platforms to help videos go viral.",
+    tags: ["React", "Node.js", "Gemini API"],
+    gradient: "from-rose-600 via-pink-600 to-red-500",
+    icon: Sparkles,
+    liveUrl: "https://hypereel.onrender.com",
+    githubUrl: "https://github.com/Aapa302/hypereel",
   },
 ];
 
@@ -159,7 +176,7 @@ export default function Showcase() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
               >
                 {projectsData.map((project, idx) => {
                   const Icon = project.icon;
@@ -205,14 +222,33 @@ export default function Showcase() {
                         </div>
                       </div>
 
-                      {/* Card Footer Link */}
-                      <div className="px-6 pb-6 pt-2 border-t border-white/5">
+                      {/* Card Footer Links */}
+                      <div className="px-6 pb-6 pt-4 border-t border-white/5 flex items-center gap-3">
                         <a
-                          href="#"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 group/link transition-colors"
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-lg transition-colors"
+                          aria-label={`View Live Site for ${project.title}`}
                         >
-                          <span>View Project</span>
-                          <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-200" />
+                          <ExternalLink className="w-3.5 h-3.5 text-indigo-400" />
+                          <span>Live Demo</span>
+                        </a>
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-lg transition-colors"
+                          aria-label={`View GitHub Repository for ${project.title}`}
+                        >
+                          <svg
+                            role="img"
+                            viewBox="0 0 24 24"
+                            className="w-3.5 h-3.5 fill-current text-neutral-300"
+                          >
+                            <path d={siGithub.path} />
+                          </svg>
+                          <span>GitHub</span>
                         </a>
                       </div>
                     </motion.div>
