@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Showcase from "@/components/Showcase";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -11,10 +13,9 @@ export default function Home() {
         <Hero />
         <About />
         <Showcase />
+        <Contact />
       </main>
-      <footer className="py-8 border-t border-white/10 text-center text-xs text-neutral-500">
-        <p>© {new Date().getFullYear()} Hanu Aapa. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
