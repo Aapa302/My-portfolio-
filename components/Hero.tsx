@@ -64,9 +64,10 @@ export default function Hero() {
           alt="Atmospheric Hero Background"
           fill
           priority
-          className="object-cover object-top opacity-50 brightness-100 contrast-105"
+          unoptimized
+          className="object-cover object-top opacity-60 brightness-110 contrast-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-[#030303]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#030303]" />
       </div>
 
       {/* Background Soft Radial Glow Effects */}
@@ -192,7 +193,8 @@ export default function Hero() {
                         src="/images/profile.png"
                         alt="Hanu Aapa"
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        unoptimized
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         priority
                       />
                     </div>
