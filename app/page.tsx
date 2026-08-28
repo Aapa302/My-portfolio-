@@ -1,6 +1,7 @@
 import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
 import IntroBanner from "@/components/IntroBanner";
+import MarqueeTicker from "@/components/MarqueeTicker";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Showcase from "@/components/Showcase";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <IntroBanner />
+        <MarqueeTicker />
         <Hero />
         <About />
         <Showcase />
