@@ -144,10 +144,10 @@ export default function Showcase() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 z-10 ${
+                  className={`relative px-5 py-2.5 rounded-full text-xs sm:text-sm transition-colors duration-300 flex items-center gap-2 z-10 ${
                     isActive
-                      ? "text-white shadow-lg"
-                      : "text-neutral-400 hover:text-white"
+                      ? "text-white font-bold"
+                      : "text-neutral-400 font-medium hover:text-white"
                   }`}
                 >
                   {isActive && (
@@ -172,10 +172,10 @@ export default function Showcase() {
             {activeTab === "projects" && (
               <motion.div
                 key="projects-tab"
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
                 className="grid grid-cols-1 md:grid-cols-2 gap-8"
               >
                 {projectsData.map((project, idx) => {
@@ -261,10 +261,10 @@ export default function Showcase() {
             {activeTab === "certificates" && (
               <motion.div
                 key="certificates-tab"
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
                 className="grid grid-cols-1 md:grid-cols-3 gap-8"
               >
                 {[1, 2, 3].map((item) => (
@@ -292,10 +292,10 @@ export default function Showcase() {
             {activeTab === "techstack" && (
               <motion.div
                 key="techstack-tab"
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
                 className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6"
               >
                 {techStackData.map((tech, idx) => {
@@ -304,8 +304,18 @@ export default function Showcase() {
                       key={tech.name}
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: idx * 0.03 }}
-                      className="group bg-neutral-900/60 hover:bg-neutral-900/95 border border-white/10 hover:border-white/25 rounded-xl p-4 flex flex-col items-center justify-center space-y-3 backdrop-blur-md transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/5"
+                      whileHover={{
+                        scale: 1.04,
+                        borderColor: `${tech.hex}80`,
+                        boxShadow: `0 0 20px ${tech.hex}33`,
+                      }}
+                      transition={{
+                        opacity: { duration: 0.3, delay: idx * 0.03 },
+                        scale: { duration: 0.2 },
+                        borderColor: { duration: 0.2 },
+                        boxShadow: { duration: 0.2 },
+                      }}
+                      className="group bg-neutral-900/60 border border-white/10 rounded-xl p-4 flex flex-col items-center justify-center space-y-3 backdrop-blur-md transition-colors duration-300 cursor-pointer"
                     >
                       <div className="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
                         {tech.customIcon ? (
