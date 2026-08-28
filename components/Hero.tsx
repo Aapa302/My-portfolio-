@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 import { Sparkles, Eye, EyeOff, ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -34,7 +34,6 @@ const techPills = [
 
 export default function Hero() {
   const [showCard, setShowCard] = useState(true);
-  const [hasProfileImage, setHasProfileImage] = useState(false);
 
   // Motion values for tilt effect
   const mouseX = useMotionValue(0);
@@ -55,14 +54,6 @@ export default function Hero() {
     mouseX.set(0);
     mouseY.set(0);
   };
-
-  useEffect(() => {
-    // Check if public/images/profile.jpg exists
-    const img = new window.Image();
-    img.src = "/images/profile.jpg";
-    img.onload = () => setHasProfileImage(true);
-    img.onerror = () => setHasProfileImage(false);
-  }, []);
 
   return (
     <section id="home" className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 lg:py-24 overflow-hidden">
@@ -185,22 +176,13 @@ export default function Hero() {
 
                     {/* Photo Container */}
                     <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-indigo-950 via-neutral-900 to-purple-950 border border-white/10 flex items-center justify-center shadow-inner">
-                      {hasProfileImage ? (
-                        <Image
-                          src="/images/profile.jpg"
-                          alt="Hanu Aapa"
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          priority
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-indigo-900/60 via-neutral-900 to-purple-900/60 flex flex-col items-center justify-center text-neutral-400 p-4">
-                          <div className="w-20 h-20 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center mb-2">
-                            <span className="font-display font-bold text-3xl text-indigo-400">HA</span>
-                          </div>
-                          <span className="text-xs font-medium text-neutral-400">Profile Photo Placeholder</span>
-                        </div>
-                      )}
+                      <Image
+                        src="/images/profile.png"
+                        alt="Hanu Aapa"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        priority
+                      />
                     </div>
 
                     {/* Card Info */}
