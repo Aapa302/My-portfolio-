@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Showcase from "@/components/Showcase";
 
 export default function Home() {
   return (
@@ -7,6 +9,8 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <About />
+        <Showcase />
       </main>
       <footer className="py-8 border-t border-white/10 text-center text-xs text-neutral-500">
         <p>© {new Date().getFullYear()} Hanu Aapa. All rights reserved.</p>
