@@ -12,8 +12,8 @@ const statHighlights = [
   },
   {
     icon: Smartphone,
-    title: "100% Mobile Workflow",
-    description: "Architected, engineered, and deployed strictly from a smartphone with zero PC involved.",
+    title: "Rapid AI-Powered Delivery",
+    description: "Leveraging AI coding agents to design, build, and deploy full-stack products faster than traditional development cycles.",
     badge: "Unique Method",
   },
   {
