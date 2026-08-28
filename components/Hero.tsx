@@ -33,7 +33,7 @@ const techPills = [
 ];
 
 export default function Hero() {
-  const [showCard, setShowCard] = useState(false);
+  const [showCard, setShowCard] = useState(true);
 
   // Motion values for tilt effect
   const mouseX = useMotionValue(0);
