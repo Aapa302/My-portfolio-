@@ -32,7 +32,11 @@ const techPills = [
   { name: "Tailwind CSS", color: "from-teal-500/20 to-neutral-800" },
 ];
 
-export default function Hero() {
+interface HeroProps {
+  onAboutClick?: () => void;
+}
+
+export default function Hero({ onAboutClick }: HeroProps) {
   const [showCard, setShowCard] = useState(true);
 
   // Motion values for tilt effect
@@ -128,13 +132,21 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
-              <a
-                href="#about"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all duration-200 shadow-lg shadow-white/5 active:scale-95"
+              <button
+                type="button"
+                onClick={() => {
+                  if (onAboutClick) {
+                    onAboutClick();
+                  } else {
+                    const el = document.getElementById("about");
+                    el?.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all duration-200 shadow-lg shadow-white/5 active:scale-95 cursor-pointer"
               >
                 About Me
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
 
               <button
                 onClick={() => setShowCard(!showCard)}
@@ -163,8 +175,8 @@ export default function Hero() {
                   key="id-card"
                   initial={{ opacity: 0, scale: 0.8, rotate: -8, y: -30 }}
                   animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, rotate: 8, y: -30 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  exit={{ opacity: 0, scale: 0.5, rotate: 360, y: -800 }}
+                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                   style={{
