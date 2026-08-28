@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from "lucide-react";
+import { Mail, MessageCircle, Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -82,14 +82,14 @@ export default function Contact() {
             </div>
 
             <h2 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
-              Let&apos;s Build Something
+              Let&apos;s Build Together
             </h2>
 
             <p className="text-neutral-300 text-base sm:text-lg leading-relaxed font-normal">
               Have an innovative project in mind or looking for an AI developer to turn your ideas into functional, intuitive web platforms? I&apos;m always open to discussing new opportunities, creative collaborations, or ambitious technology ventures.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-4 flex flex-wrap items-center gap-3">
               <a
                 href="mailto:popathanu1996@gmail.com"
                 className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 hover:border-indigo-500/50 text-white font-medium text-sm transition-all duration-300 backdrop-blur-md shadow-lg group active:scale-95"
@@ -98,6 +98,16 @@ export default function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <span>popathanu1996@gmail.com</span>
+              </a>
+
+              <a
+                href="https://wa.me/917984531835"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact on WhatsApp"
+                className="inline-flex items-center justify-center w-12 h-12 sm:w-[52px] sm:h-[52px] rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 group active:scale-95 shrink-0"
+              >
+                <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
               </a>
             </div>
           </motion.div>
