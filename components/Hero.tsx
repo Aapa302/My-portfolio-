@@ -57,9 +57,21 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 lg:py-24 overflow-hidden">
+      {/* Hero Top Atmospheric Background Image */}
+      <div className="absolute top-0 inset-x-0 h-[450px] sm:h-[500px] lg:h-[550px] pointer-events-none select-none z-0 overflow-hidden">
+        <Image
+          src="/images/hero-bg.png"
+          alt="Atmospheric Hero Background"
+          fill
+          priority
+          className="object-cover object-top opacity-30 brightness-90 contrast-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-[#030303]" />
+      </div>
+
       {/* Background Soft Radial Glow Effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none z-0" />
+      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
