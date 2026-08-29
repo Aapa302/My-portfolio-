@@ -108,7 +108,7 @@ export default function Showcase() {
   const [activeTab, setActiveTab] = useState<TabType>("projects");
 
   return (
-    <section id="showcase" className="relative py-24 bg-[#030303] text-[#f5f5f7] overflow-hidden border-t border-white/5">
+    <section id="showcase" className="relative py-12 sm:py-20 lg:py-24 bg-[#030303] text-[#f5f5f7] overflow-hidden border-t border-white/5">
       {/* Background Soft Radial Glow */}
       <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-10 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function IntroBanner() {
   return (
-    <section className="relative w-full min-h-[calc(100vh-5rem)] bg-[#030303] text-[#f5f5f7] flex flex-col justify-between p-6 sm:p-10 lg:p-16 overflow-hidden border-b border-white/10">
+    <section className="relative w-full bg-[#030303] text-[#f5f5f7] flex flex-col justify-between py-12 px-4 sm:p-10 lg:p-16 overflow-hidden border-b border-white/10">
       {/* Background glow accents */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -14,34 +14,13 @@ export default function IntroBanner() {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto w-full max-w-7xl mx-auto">
 
         {/* Left / Center-Left: Metallic typography & overlapping portrait */}
-        <div className="lg:col-span-8 relative flex items-center justify-start min-h-[300px] sm:min-h-[400px] lg:min-h-[480px]">
-          {/* Huge Display Text with staggered slide-up + blur reveal */}
-          <h1 className="font-display font-extrabold text-6xl sm:text-8xl lg:text-[10rem] tracking-tighter uppercase leading-none bg-gradient-to-br from-white via-neutral-200 to-neutral-600 bg-clip-text text-transparent drop-shadow-2xl z-0 select-none">
-            <motion.span
-              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-              className="inline-block"
-            >
-              HANU
-            </motion.span>
-            <br className="hidden sm:inline" />{" "}
-            <motion.span
-              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
-              className="inline-block"
-            >
-              AAPA
-            </motion.span>
-          </h1>
-
-          {/* Overlapping Moody Portrait - Magazine cover style */}
+        <div className="lg:col-span-8 relative flex items-center justify-start min-h-[300px] sm:min-h-[380px] lg:min-h-[480px]">
+          {/* Overlapping Moody Portrait - Layered behind/with the text magazine-cover style */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="absolute right-0 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 w-48 sm:w-72 lg:w-96 h-64 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden z-10 shadow-2xl border border-white/20 backdrop-blur-sm group"
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="absolute left-1/4 sm:left-1/3 lg:left-2/5 top-1/2 -translate-y-1/2 w-52 sm:w-72 lg:w-96 h-64 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden z-0 shadow-2xl border border-white/20 backdrop-blur-sm group opacity-85"
           >
             <Image
               src="/images/hero-bg.png"
@@ -49,11 +28,32 @@ export default function IntroBanner() {
               fill
               priority
               unoptimized
-              className="object-cover object-center grayscale contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+              className="object-cover object-center grayscale contrast-125 brightness-105 group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            {/* Subtle overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            {/* Gradient overlay to blend image into dark canvas while keeping text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/80 via-transparent to-[#030303]/40" />
           </motion.div>
+
+          {/* Huge Display Text over/interlocking with portrait */}
+          <h1 className="font-display font-extrabold text-5xl sm:text-8xl lg:text-[10rem] tracking-tighter uppercase leading-none text-white drop-shadow-2xl z-10 select-none relative pointer-events-none">
+            <motion.span
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              className="inline-block text-white"
+            >
+              HANU
+            </motion.span>
+            <br />
+            <motion.span
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+              className="inline-block text-white"
+            >
+              AAPA
+            </motion.span>
+          </h1>
         </div>
 
         {/* Right Side: Elegant Serif Tagline */}

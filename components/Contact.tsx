@@ -60,7 +60,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-[#030303] text-[#f5f5f7] overflow-hidden border-t border-white/5">
+    <section id="contact" className="relative py-12 sm:py-20 lg:py-24 bg-[#030303] text-[#f5f5f7] overflow-hidden border-t border-white/5">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
