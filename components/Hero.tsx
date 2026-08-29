@@ -198,13 +198,47 @@ export default function Hero({ onAboutClick }: HeroProps) {
               {showCard && (
                 <motion.div
                   key="id-card"
-                  initial={{ opacity: 0, scale: 0.8, rotate: -8, y: -30 }}
-                  animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.5, rotate: 360, y: -800 }}
-                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                  initial={{
+                    opacity: 0,
+                    scale: 1.18,
+                    x: 75,
+                    y: -55,
+                    rotate: 23,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    x: 0,
+                    y: 0,
+                    rotate: 6,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: [1, 1.12, 0.55],
+                    x: -360,
+                    y: -220,
+                    rotate: -36,
+                    transition: {
+                      duration: 0.7,
+                      ease: [0.32, 0, 0.67, 0],
+                      scale: {
+                        duration: 0.7,
+                        times: [0, 0.35, 1],
+                        ease: "easeInOut",
+                      },
+                    },
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 42,
+                    damping: 7.5,
+                    mass: 1.15,
+                    restDelta: 0.001,
+                  }}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                   style={{
+                    originX: 0.5,
                     originY: 0,
                     rotateX,
                     rotateY,
