@@ -26,7 +26,7 @@ const statHighlights = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 bg-[#030303] text-[#f5f5f7] overflow-hidden">
+    <section id="about" className="relative py-12 sm:py-20 lg:py-24 bg-[#030303] text-[#f5f5f7] overflow-hidden">
       {/* Background Soft Glow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />

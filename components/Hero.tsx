@@ -60,7 +60,7 @@ export default function Hero({ onAboutClick }: HeroProps) {
   };
 
   return (
-    <section id="home" className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 lg:py-24 overflow-hidden">
+    <section id="home" className="relative lg:min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 lg:py-24 overflow-hidden">
       {/* Hero Top Atmospheric Background Image */}
       <div className="absolute top-0 inset-x-0 h-[450px] sm:h-[500px] lg:h-[550px] pointer-events-none select-none z-0 overflow-hidden">
         <Image
@@ -198,37 +198,17 @@ export default function Hero({ onAboutClick }: HeroProps) {
               {showCard && (
                 <motion.div
                   key="id-card"
-                  initial={{
-                    opacity: 0,
-                    scale: 1.18,
-                    x: 60,
-                    y: -40,
-                    rotate: 23,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    x: 0,
-                    y: 0,
-                    rotate: 6,
-                  }}
+                  initial={{ opacity: 0, scale: 1.35, rotate: 30, y: -40, x: 20 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 6, y: 0, x: 0 }}
                   exit={{
-                    opacity: [1, 1, 0],
-                    scale: [1, 1.12, 0.5],
-                    x: [0, -180, -360],
-                    y: [0, -100, -240],
-                    rotate: [6, -15, -35],
-                    transition: {
-                      duration: 0.7,
-                      ease: "easeInOut",
-                    },
+                    opacity: 0,
+                    scale: 1.2,
+                    rotate: -35,
+                    x: -60,
+                    y: -50,
+                    transition: { duration: 0.5, ease: "easeIn" },
                   }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 170,
-                    damping: 14,
-                    mass: 1,
-                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                   style={{
