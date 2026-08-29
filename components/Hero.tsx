@@ -82,44 +82,69 @@ export default function Hero({ onAboutClick }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           {/* Left Content Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-7 flex flex-col items-start space-y-6 text-left"
-          >
-            {/* Status & Role Badge */}
+          <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
+            {/* Status & Role Badges */}
             <div className="flex flex-wrap items-center gap-3">
               {/* Available for Work Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+              <motion.div
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide uppercase"
+              >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 Available for Work
-              </div>
+              </motion.div>
 
               {/* Role Badge */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-medium tracking-wide">
+              <motion.div
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-medium tracking-wide"
+              >
                 <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
                 Full-Stack AI App Developer
-              </div>
+              </motion.div>
             </div>
 
             {/* Headline */}
             <div className="space-y-2">
-              <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-none">
+              <motion.h1
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.34, ease: "easeOut" }}
+                className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-none"
+              >
                 Hanu Aapa
-              </h1>
-              <p className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-neutral-300 tracking-tight leading-snug">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.46, ease: "easeOut" }}
+                className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-neutral-300 tracking-tight leading-snug"
+              >
                 Turning creative ideas into interactive high-quality web experiences.
-              </p>
+              </motion.p>
             </div>
 
             {/* Description Paragraph */}
-            <p className="text-neutral-400 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+            <motion.p
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: 0.58, ease: "easeOut" }}
+              className="text-neutral-400 text-base sm:text-lg max-w-2xl leading-relaxed font-normal"
+            >
               Building modern, AI-powered apps with clean, responsive interfaces. Turning ideas into real, working products — end to end.
-            </p>
+            </motion.p>
 
             {/* Tech Pills */}
-            <div className="flex flex-wrap gap-2 pt-1">
+            <motion.div
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+              className="flex flex-wrap gap-2 pt-1"
+            >
               {techPills.map((tech) => (
                 <span
                   key={tech.name}
@@ -128,9 +153,9 @@ export default function Hero({ onAboutClick }: HeroProps) {
                   {tech.name}
                 </span>
               ))}
-            </div>
+            </motion.div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Note: Buttons maintain their normal display/interaction */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
                 type="button"
@@ -165,7 +190,7 @@ export default function Hero({ onAboutClick }: HeroProps) {
                 )}
               </button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: ID-Badge/Lanyard Photo Card */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[420px]">

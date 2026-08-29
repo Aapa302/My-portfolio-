@@ -69,25 +69,37 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
           {/* Left Column: Heading + Invitation + Direct Email Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-6 flex flex-col items-start space-y-6"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wider uppercase">
+          <div className="lg:col-span-6 flex flex-col items-start space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wider uppercase"
+            >
               <Sparkles className="w-3.5 h-3.5" />
               Get In Touch
-            </div>
+            </motion.div>
 
-            <h2 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
+            <motion.h2
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+              className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight"
+            >
               Let&apos;s Build Together
-            </h2>
+            </motion.h2>
 
-            <p className="text-neutral-300 text-base sm:text-lg leading-relaxed font-normal">
+            <motion.p
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.34, ease: "easeOut" }}
+              className="text-neutral-300 text-base sm:text-lg leading-relaxed font-normal"
+            >
               Have an innovative project in mind or looking for an AI developer to turn your ideas into functional, intuitive web platforms? I&apos;m always open to discussing new opportunities, creative collaborations, or ambitious technology ventures.
-            </p>
+            </motion.p>
 
             <div className="pt-4 flex flex-wrap items-center gap-3">
               <a
@@ -110,7 +122,7 @@ export default function Contact() {
                 <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Send Message Form Card */}
           <motion.div

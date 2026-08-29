@@ -33,41 +33,59 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-start space-y-3 mb-12"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wider uppercase">
+        <div className="flex flex-col items-start space-y-3 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wider uppercase"
+          >
             <Cpu className="w-3.5 h-3.5" />
             About Me
-          </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+            className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight"
+          >
             Building the Future directly from a Smartphone
-          </h2>
-        </motion.div>
+          </motion.h2>
+        </div>
 
         {/* Content & Paragraphs Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-12 space-y-6 text-neutral-300 text-base sm:text-lg leading-relaxed font-normal"
-          >
-            <p className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl">
+          <div className="lg:col-span-12 space-y-6 text-neutral-300 text-base sm:text-lg leading-relaxed font-normal">
+            <motion.p
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.34, ease: "easeOut" }}
+              className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl"
+            >
               I am an independent, mobile-only AI app developer pushing the boundaries of software creation. My entire development workflow takes place directly on a smartphone — zero desktop computers, zero traditional rigs. By pairing mobile power with next-generation AI coding agents, I conceptualize, build, test, and ship complete full-stack web platforms on the go.
-            </p>
-            <p className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.46, ease: "easeOut" }}
+              className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl"
+            >
               My technology stack centers on <span className="text-white font-medium">React</span>, <span className="text-white font-medium">Next.js</span>, <span className="text-white font-medium">Firebase</span>, and the <span className="text-white font-medium">Gemini API</span>. From complex multi-agent simulations to speech-recognition utility tools for local dialect shopkeepers, I specialize in transforming ambitious concepts into high-impact products rapidly and independently.
-            </p>
-            <p className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.58, ease: "easeOut" }}
+              className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl"
+            >
               I believe the future of software engineering lies in human-AI collaboration. By orchestrating AI agents as virtual team members, I deliver robust, scalable application architecture, fluid user interfaces, and custom AI logic — proving that real innovation is driven by vision and execution, regardless of device.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
 
         {/* 3 Stat/Highlight Cards */}

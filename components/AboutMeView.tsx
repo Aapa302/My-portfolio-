@@ -70,56 +70,86 @@ export default function AboutMeView({ onBack }: AboutMeViewProps) {
         </motion.div>
 
         {/* Heading with Typewriter Cursor Effect */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-center mb-10"
-        >
-          <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight inline-flex items-center justify-center flex-wrap gap-x-3">
+        <div className="text-center mb-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight inline-flex items-center justify-center flex-wrap gap-x-3"
+          >
             <span>About Myself</span>
             <span
               className="inline-block w-1.5 h-9 sm:h-12 bg-indigo-400 animate-pulse ml-1 rounded-full shadow-[0_0_8px_#818cf8]"
               aria-hidden="true"
             />
-          </h1>
-          <p className="text-neutral-400 text-sm sm:text-base mt-3 max-w-lg mx-auto">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+            className="text-neutral-400 text-sm sm:text-base mt-3 max-w-lg mx-auto"
+          >
             Pioneering autonomous full-stack software development built entirely from a smartphone with AI agents.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Card/Box with 4 Bio Paragraphs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full bg-neutral-900/60 border border-white/10 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl space-y-6 text-neutral-300 text-base sm:text-lg leading-relaxed font-normal mb-10"
-        >
+        <div className="w-full bg-neutral-900/60 border border-white/10 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl space-y-6 text-neutral-300 text-base sm:text-lg leading-relaxed font-normal mb-10">
           <div className="flex items-center gap-3 pb-4 border-b border-white/10">
             <div className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
               <Smartphone className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-display font-bold text-lg text-white">Mobile-Only Autonomous Engineer</h2>
-              <p className="text-xs text-neutral-400">Zero desktop PCs • Pure mobile velocity</p>
+              <motion.h2
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                className="font-display font-bold text-lg text-white"
+              >
+                Mobile-Only Autonomous Engineer
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.38, ease: "easeOut" }}
+                className="text-xs text-neutral-400"
+              >
+                Zero desktop PCs • Pure mobile velocity
+              </motion.p>
             </div>
           </div>
 
-          <p>
+          <motion.p
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.6, delay: 0.46, ease: "easeOut" }}
+          >
             I am an independent full-stack AI app developer operating with a unique execution model: I design, code, test, and launch production web applications entirely from a smartphone. Without relying on traditional laptop or desktop dev hardware, I leverage mobile computing power coupled with cloud infrastructure to build software from anywhere.
-          </p>
+          </motion.p>
 
-          <p>
+          <motion.p
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.6, delay: 0.58, ease: "easeOut" }}
+          >
             My core engineering stack revolves around modern web architecture — utilizing <span className="text-white font-medium">Next.js</span>, <span className="text-white font-medium">React</span>, <span className="text-white font-medium">Tailwind CSS</span>, <span className="text-white font-medium">Firebase</span>, and the <span className="text-white font-medium">Gemini API</span>. By orchestrating advanced AI coding agents directly through mobile interfaces, I can execute rapid iteration cycles, set up databases, deploy cloud APIs, and push production releases seamlessly.
-          </p>
+          </motion.p>
 
-          <p>
+          <motion.p
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+          >
             I am genuinely passionate about AI-assisted development and exploring how autonomous AI tools redefine the limits of software creation. Eliminating the friction of traditional setups allows me to focus purely on product logic, user experience, and solving real-world challenges through intelligent software solutions.
-          </p>
+          </motion.p>
 
-          <p>
+          <motion.p
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.6, delay: 0.82, ease: "easeOut" }}
+          >
             Whether building interactive AI web tools, high-speed mobile web applications, or automated workflows, my goal is to prove that vision, adaptability, and cutting-edge AI collaboration outweigh traditional hardware constraints when delivering world-class software.
-          </p>
+          </motion.p>
 
           <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono text-neutral-400">
             <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-2">
@@ -135,7 +165,7 @@ export default function AboutMeView({ onBack }: AboutMeViewProps) {
               <span>Mobile-First Dev Rig</span>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Download Resume Button */}
         <motion.div

@@ -74,25 +74,30 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             </motion.div>
 
             {/* Bold White Title Text (Two Lines) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-1"
-            >
-              <h1 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+            <div className="space-y-1">
+              <motion.h1
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight"
+              >
                 Welcome to my
-              </h1>
-              <h1 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+              </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.6, delay: 0.52, ease: "easeOut" }}
+                className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight"
+              >
                 Portfolio Website
-              </h1>
-            </motion.div>
+              </motion.h1>
+            </div>
 
             {/* Smaller Gray Tagline */}
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: 0.68, ease: "easeOut" }}
               className="text-neutral-400 text-sm sm:text-base font-normal tracking-wide"
             >
               Creating Websites That Feel Alive.
@@ -100,9 +105,9 @@ export default function Preloader({ onComplete }: PreloaderProps) {
 
             {/* Typewriter URL Badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
+              initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.6, delay: 0.82, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-mono text-neutral-200 shadow-inner"
             >
               <span>{typedText}</span>
