@@ -115,24 +115,36 @@ export default function Showcase() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center text-center space-y-3 mb-12"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wider uppercase">
+        <div className="flex flex-col items-center text-center space-y-3 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wider uppercase"
+          >
             <Sparkles className="w-3.5 h-3.5" />
             Portfolio Showcase
-          </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+            className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight"
+          >
             Craft, Code & Credentials
-          </h2>
-          <p className="text-neutral-400 text-base sm:text-lg max-w-xl">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.34, ease: "easeOut" }}
+            className="text-neutral-400 text-base sm:text-lg max-w-xl"
+          >
             Explore my latest projects, technical competencies, and professional credentials.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Pill-shaped Tabs Navigation */}
         <div className="flex justify-center mb-12">

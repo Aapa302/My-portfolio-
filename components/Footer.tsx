@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { siInstagram, siGithub } from "simple-icons";
 
 export default function Footer() {
@@ -9,9 +10,15 @@ export default function Footer() {
     <footer className="w-full bg-[#030303] border-t border-white/10 text-neutral-400 py-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center space-y-6 text-center">
         {/* Uppercase Label */}
-        <span className="text-xs font-semibold tracking-widest text-neutral-400 uppercase">
+        <motion.span
+          initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          className="text-xs font-semibold tracking-widest text-neutral-400 uppercase inline-block"
+        >
           FOLLOW ME
-        </span>
+        </motion.span>
 
         {/* Social Icons Row */}
         <div className="flex items-center space-x-4">
@@ -44,10 +51,16 @@ export default function Footer() {
         </div>
 
         {/* Copyright Line */}
-        <p className="text-xs text-neutral-400 leading-relaxed">
+        <motion.p
+          initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+          className="text-xs text-neutral-400 leading-relaxed"
+        >
           Copyright © {currentYear} All Rights Reserved | Created by{" "}
           <span className="font-bold underline text-white">Hanu Aapa</span>
-        </p>
+        </motion.p>
       </div>
     </footer>
   );
