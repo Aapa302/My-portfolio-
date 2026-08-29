@@ -82,7 +82,7 @@ export default function Hero({ onAboutClick }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           {/* Left Content Column */}
-          <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
+          <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left relative z-20">
             {/* Status & Role Badges */}
             <div className="flex flex-wrap items-center gap-3">
               {/* Available for Work Badge */}
@@ -156,7 +156,7 @@ export default function Hero({ onAboutClick }: HeroProps) {
             </motion.div>
 
             {/* CTA Buttons - Note: Buttons maintain their normal display/interaction */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-center gap-4 pt-4 relative z-30">
               <button
                 type="button"
                 onClick={() => {
@@ -201,8 +201,8 @@ export default function Hero({ onAboutClick }: HeroProps) {
                   initial={{
                     opacity: 0,
                     scale: 1.18,
-                    x: 75,
-                    y: -55,
+                    x: 60,
+                    y: -40,
                     rotate: 23,
                   }}
                   animate={{
@@ -213,27 +213,21 @@ export default function Hero({ onAboutClick }: HeroProps) {
                     rotate: 6,
                   }}
                   exit={{
-                    opacity: 0,
-                    scale: [1, 1.12, 0.55],
-                    x: -360,
-                    y: -220,
-                    rotate: -36,
+                    opacity: [1, 1, 0],
+                    scale: [1, 1.12, 0.5],
+                    x: [0, -180, -360],
+                    y: [0, -100, -240],
+                    rotate: [6, -15, -35],
                     transition: {
                       duration: 0.7,
-                      ease: [0.32, 0, 0.67, 0],
-                      scale: {
-                        duration: 0.7,
-                        times: [0, 0.35, 1],
-                        ease: "easeInOut",
-                      },
+                      ease: "easeInOut",
                     },
                   }}
                   transition={{
                     type: "spring",
-                    stiffness: 42,
-                    damping: 7.5,
-                    mass: 1.15,
-                    restDelta: 0.001,
+                    stiffness: 170,
+                    damping: 14,
+                    mass: 1,
                   }}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
@@ -244,7 +238,7 @@ export default function Hero({ onAboutClick }: HeroProps) {
                     rotateY,
                     transformStyle: "preserve-3d",
                   }}
-                  className="relative flex flex-col items-center perspective-1000 cursor-pointer group"
+                  className="relative flex flex-col items-center perspective-1000 cursor-pointer group z-10"
                 >
                   {/* Lanyard Strap Top */}
                   <div className="w-3 h-16 bg-gradient-to-b from-neutral-800 to-indigo-600 rounded-t-sm shadow-md" />
